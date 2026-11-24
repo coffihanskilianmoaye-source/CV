@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "site": "hans-kilian-coffi-cv",
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "headers": [
+      { "source": "**/*.@(jpg|pdf)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }] }
+    ]
+  }
+}

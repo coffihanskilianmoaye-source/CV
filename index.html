@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hans-Kilian COFFI, finance, contrôle de gestion et audit</title>
+<meta name="description" content="CV interactif de Hans-Kilian COFFI, diplômé d’un MBA Finance : analyse financière, contrôle de gestion et audit.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316233b'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' text-anchor='middle' fill='%23f2f5f0'%3EHK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f2f5f0; --sheet:#fbfcfa; --ink:#16233b; --muted:#54627a; --rule:#c8d3cb; --pen:#1d3fa8;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:68px}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+html:has(dialog[open]){overflow:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:var(--pen)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--pen);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.muted{color:var(--muted)}
+
+/* Barre du haut */
+.top{position:sticky;top:0;z-index:10;background:rgba(242,245,240,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;gap:22px;height:56px;overflow-x:auto;white-space:nowrap}
+.top a{color:var(--ink);text-decoration:none;font-size:15px}
+.top a:hover{color:var(--pen)}
+.top .home{font:500 19px var(--serif);margin-right:auto}
+.top .dl{font-weight:600;color:var(--pen)}
+
+/* Page de garde */
+.hero{padding:64px 0 52px;background:
+  linear-gradient(to bottom,rgba(242,245,240,0) 55%,var(--paper)),
+  repeating-linear-gradient(to bottom,transparent 0 35px,rgba(22,35,59,.07) 35px 36px)}
+.hero-in{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+h1{margin:0;font:500 clamp(46px,8vw,92px)/.98 var(--serif);letter-spacing:-.025em}
+.name{background:none;border:0;padding:0;cursor:pointer;text-align:left;font:inherit;letter-spacing:inherit;text-decoration:underline dotted transparent;text-underline-offset:.12em;text-decoration-thickness:3px;transition:text-decoration-color .15s}
+.name:hover,.name:focus-visible{text-decoration-color:var(--pen)}
+.role{margin:22px 0 0;max-width:34em;font:400 22px/1.4 var(--serif)}
+.contact{display:flex;flex-wrap:wrap;gap:6px 24px;margin:18px 0 0;font-size:16px}
+.contact a{color:var(--ink)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:2px solid var(--ink);background:var(--ink);color:var(--paper);padding:11px 20px;border-radius:999px;font:600 15px var(--sans);text-decoration:none;cursor:pointer}
+.btn:hover{background:#25375c;border-color:#25375c}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:rgba(22,35,59,.08)}
+.btn[disabled]{opacity:.4;cursor:default}
+.hint{margin:22px 0 0;font-size:15px;color:var(--muted)}
+.avatar{width:196px;height:196px;border-radius:50%;padding:0;border:6px solid var(--sheet);box-shadow:0 0 0 1px var(--rule),0 18px 40px -18px rgba(22,35,59,.5);overflow:hidden;cursor:pointer;background:var(--rule)}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 16%}
+
+/* Sections : libellé à gauche, détail à droite, comme un registre */
+.sec{border-top:1px solid var(--rule);padding:44px 0}
+.sec-in{display:grid;grid-template-columns:210px 1fr;gap:28px}
+h2{margin:0;font:500 30px/1.15 var(--serif)}
+.sec-body{min-width:0}
+.sec-body>p:first-child{margin-top:0}
+.prose{max-width:44em;margin:0 0 20px}
+.skills{display:grid;gap:18px;margin:0}
+.skills dt{font:600 20px var(--serif)}
+.skills dd{margin:2px 0 0;max-width:40em}
+.row{display:grid;grid-template-columns:1fr 160px;gap:20px;padding:0 0 28px;margin:0 0 28px;border-bottom:1px solid var(--rule)}
+.row:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.row h3{margin:0;font:600 22px/1.25 var(--serif)}
+.where{margin:2px 0 10px;color:var(--muted)}
+.when{margin:0;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-size:15px;padding-top:5px}
+.row ul{margin:0;padding-left:1.1em;max-width:42em}
+.row li{margin:0 0 6px}
+.row .subj{margin:0;max-width:42em}
+
+/* Nom d'entreprise ou d'école cliquable */
+.org{background:none;border:0;padding:0;cursor:pointer;color:var(--pen);font-weight:600;border-bottom:2px dotted var(--pen);line-height:1.3}
+.org:hover{background:rgba(29,63,168,.08)}
+.ic{width:.8em;height:.8em;display:inline-block;margin-left:.3em;vertical-align:-.02em}
+
+/* Certifications */
+.grp{margin:30px 0 8px;font:600 20px var(--serif)}
+.grp:first-child{margin-top:0}
+.cert{display:grid;grid-template-columns:1fr 230px 110px;gap:16px;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--rule);padding:12px 4px;cursor:pointer;align-items:baseline}
+.cert:hover{background:rgba(29,63,168,.06)}
+.cert .t{color:var(--pen);font-weight:600}
+.cert .i{color:var(--muted);font-size:15px}
+.cert .d{color:var(--muted);font-size:15px;text-align:right;font-variant-numeric:tabular-nums}
+.more{margin-top:34px;max-width:44em}
+.more h3{margin:0 0 6px;font:600 20px var(--serif)}
+.more p{margin:0 0 8px}
+
+footer{border-top:1px solid var(--rule);padding:30px 0 48px;color:var(--muted);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* Bulles */
+dialog{border:0;padding:0;background:transparent;width:min(640px,calc(100vw - 24px));max-width:none;max-height:none;overflow:visible;color:var(--ink)}
+dialog::backdrop{background:rgba(22,35,59,.5);backdrop-filter:blur(4px)}
+.bub{position:relative;background:var(--sheet);border-radius:30px;padding:34px 34px 30px;max-height:calc(100vh - 40px);max-height:calc(100dvh - 40px);overflow:auto;box-shadow:0 40px 90px -24px rgba(22,35,59,.6)}
+@media(prefers-reduced-motion:no-preference){
+  dialog[open] .bub{animation:pop .2s ease-out}
+  @keyframes pop{from{opacity:0;transform:translateY(12px) scale(.96)}}
+}
+.x{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--rule);background:var(--sheet);cursor:pointer;display:grid;place-items:center;z-index:2}
+.x:hover{background:var(--paper)}
+.x svg{width:16px;height:16px}
+.bub h2{font:500 32px/1.15 var(--serif);padding-right:44px}
+.bub h3{margin:24px 0 8px;font:600 19px var(--serif)}
+.bub p{margin:8px 0}
+.portrait{width:min(100%,340px);margin:6px auto 22px;border-radius:24px;overflow:hidden;box-shadow:0 0 0 1px var(--rule)}
+.portrait img{width:100%}
+.center{text-align:center}
+.pic{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;margin:0 0 20px;display:grid;place-items:center;background:linear-gradient(135deg,#1b2d52,#30528f)}
+.pic .mono{font:500 72px var(--serif);color:#dbe5fa;letter-spacing:.02em}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stint{border-top:1px solid var(--rule);padding:12px 0}
+.stint:first-of-type{border-top:0}
+.stint b{font:600 17px var(--sans)}
+.stint small{display:block;color:var(--muted);font-size:15px}
+.stint ul{margin:8px 0 0;padding-left:1.1em}
+.cimg{width:100%;border:1px solid var(--rule);border-radius:14px;margin:4px 0 20px}
+.pn{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
+.legend{display:flex;gap:20px;color:var(--muted);font-size:15px;margin:6px 0 4px}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--ink);display:inline-block}
+.dot.ring{background:var(--sheet);border:2px solid var(--ink)}
+.tl{list-style:none;margin:16px 0 0;padding:0 0 0 28px;position:relative}
+.tl::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:2px;background:var(--rule)}
+.tl li{position:relative;padding:0 0 22px}
+.tl li:last-child{padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:-28px;top:7px;width:16px;height:16px;border-radius:50%;background:var(--ink);box-sizing:border-box}
+.tl li.edu::before{background:var(--sheet);border:3px solid var(--ink)}
+.tl .dt{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tl .tt{font:600 18px/1.3 var(--serif);margin:0}
+.tl .pl{margin:0;color:var(--muted);font-size:15px}
+
+@media(max-width:860px){
+  .sec-in{grid-template-columns:1fr;gap:18px}
+  .hero{padding:40px 0 36px}
+  .hero-in{grid-template-columns:1fr;gap:28px}
+  .avatar{order:-1;width:124px;height:124px;border-width:4px}
+  .role{font-size:20px}
+}
+@media(max-width:620px){
+  .wrap{padding:0 18px}
+  .row{grid-template-columns:1fr;gap:4px}
+  .when{text-align:left;order:-1;padding:0}
+  .cert{grid-template-columns:1fr;gap:2px}
+  .cert .d{text-align:left}
+  .bub{padding:26px 22px 24px;border-radius:24px}
+  .bub h2{font-size:27px}
+  .top .wrap{gap:18px}
+}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="home" href="#top">Hans-Kilian COFFI</a>
+  <a href="#profil">Profil</a>
+  <a href="#competences">Compétences</a>
+  <a href="#experiences">Expériences</a>
+  <a href="#formation">Formation</a>
+  <a href="#certifications">Certifications</a>
+  <a class="dl" href="docs/CV-Hans-Kilian-COFFI.pdf" download>CV en PDF</a>
+</div></header>
+
+<main id="top">
+  <section class="hero"><div class="wrap hero-in">
+    <div>
+      <h1><button class="name" data-open="photo" aria-label="Hans-Kilian COFFI, voir sa photo">Hans-Kilian<br>COFFI</button></h1>
+      <p class="role">Diplômé d’un MBA Finance de l’ESLSCA Business School, spécialisé en analyse financière, contrôle de gestion et audit.</p>
+      <p class="contact">
+        <a href="mailto:hans_kilian.coffi@yahoo.com">hans_kilian.coffi@yahoo.com</a>
+        <a href="tel:+33632934978">+33 6 32 93 49 78</a>
+        <span>Paris, France</span>
+      </p>
+      <div class="cta">
+        <button class="btn" data-open="parcours">Voir tout mon parcours</button>
+        <a class="btn ghost" href="docs/CV-Hans-Kilian-COFFI.pdf" download>Télécharger le CV</a>
+      </div>
+      <p class="hint">Les noms soulignés en bleu ouvrent une fiche : photo, entreprise, école ou certification.</p>
+    </div>
+    <button class="avatar" data-open="photo" aria-label="Voir la photo en grand"><img src="img/photo.jpg" alt="Portrait de Hans-Kilian Coffi en costume"></button>
+  </div></section>
+
+  <div id="sections"></div>
+</main>
+
+<footer><div class="wrap">
+  <span>Hans-Kilian COFFI, Paris</span>
+  <a href="docs/CV-Hans-Kilian-COFFI.pdf" download>Télécharger le CV en PDF</a>
+</div></footer>
+
+<dialog id="bubble" aria-labelledby="bt">
+  <div class="bub">
+    <button class="x" data-close aria-label="Fermer"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg></button>
+    <div id="bc"></div>
+  </div>
+</dialog>
+
+<noscript><p class="wrap">Ce CV est interactif. <a href="docs/CV-Hans-Kilian-COFFI.pdf">Ouvrir la version PDF</a>.</p></noscript>
+
+<script>
+/* ===================== CONTENU (modifiable) ===================== */
+
+/* Présentations et images des entreprises et écoles.
+   Image : dépose un fichier  img/<identifiant>.jpg, .png ou .webp  (ex. img/eslsca.png).
+   S’il n’existe pas, des initiales s’affichent à la place.
+   Si "about" est vide, seule la fiche « Mon passage » est affichée. */
+const ORGS = {
+  "eslsca":        { name: "ESLSCA Business School", initials: "ES",
+    about: "École de commerce privée française, l’ESLSCA Business School propose des formations en management et en finance, notamment sur ses campus de Paris et de Rabat." },
+  "decimal":       { name: "Décimal SARL", initials: "D", about: "" },
+  "horizon":       { name: "Horizon Nouvel SARL", initials: "HN", about: "" },
+  "jumia-food":    { name: "Jumia Food", initials: "JF",
+    about: "Service de livraison de repas en ligne de la plateforme Jumia, présent dans plusieurs pays d’Afrique dont la Côte d’Ivoire." },
+  "univ-abidjan":  { name: "Institut Université d’Abidjan", initials: "UA", about: "" },
+  "sainte-marie":  { name: "Institut de Formation Sainte Marie d’Abidjan", initials: "SM", about: "" }
+};
+
+const EXP = [
+  { org: "decimal", role: "Stagiaire Financier", place: "Casablanca, Maroc", dates: "Mai 2025 – Août 2025", start: "2025-05",
+    bullets: [
+      "Mise à jour des tableaux de bord financiers en intégrant les transactions quotidiennes pour assurer la fiabilité des données comptables.",
+      "Création de rapports d’analyse des coûts (variables et fixes) afin d’identifier les leviers de réduction des charges et d’optimisation de la marge.",
+      "Enregistrement et suivi des comptes fournisseurs et clients avec contrôle des échéances de paiement."] },
+  { org: "horizon", role: "Assistant Financier", place: "Abidjan, Côte d’Ivoire", dates: "Mai 2024 – Août 2024", start: "2024-05",
+    bullets: [
+      "Contribution à l’élaboration et au suivi des budgets annuels en alignant les prévisions financières sur les objectifs stratégiques de l’entreprise.",
+      "Analyse des performances par département afin d’identifier les écarts budgétaires et proposer des mesures correctives ciblées.",
+      "Préparation, structuration et présentation des rapports financiers mensuels incluant analyse des écarts et projection des flux de trésorerie."] },
+  { org: "jumia-food", role: "Assistant Acquisition Clients", place: "Abidjan, Côte d’Ivoire", dates: "Mai 2023 – Septembre 2023", start: "2023-05",
+    bullets: [
+      "Soutien à la croissance des revenus d’abonnement via des campagnes d’acquisition directe, contribuant aux objectifs financiers mensuels de la structure."] }
+];
+
+const EDU = [
+  { org: "eslsca", degree: "MBA Finance", place: "Paris, France", dates: "Novembre 2025 – Novembre 2026", start: "2025-11",
+    subjects: "Mathématiques actuarielles et financières, négociation en salle de marché, gestion des risques, économétrie." },
+  { org: "eslsca", degree: "Master Finance", place: "Rabat, Maroc", dates: "Octobre 2024 – Juin 2025", start: "2024-10",
+    subjects: "Audit financier, normes comptables, consolidation des comptes, fiscalité, diagnostic financier." },
+  { org: "univ-abidjan", degree: "Licence Sciences Comptables et Financières", place: "Abidjan, Côte d’Ivoire", dates: "Octobre 2021 – Juillet 2024", start: "2021-10",
+    subjects: "Comptabilité, gestion financière internationale, économie monétaire, gestion de trésorerie, gestion de portefeuille." },
+  { org: "sainte-marie", degree: "Baccalauréat en comptabilité", place: "Abidjan, Côte d’Ivoire", dates: "Octobre 2020 – Juin 2021", start: "2020-10",
+    subjects: "Comptabilité générale, comptabilité analytique, comptabilité de société, mathématique financière." }
+];
+
+const SKILLS = [
+  ["Analyse et contrôle", "Diagnostic financier, gestion budgétaire, analyse des écarts, contrôle de gestion, reporting financier, analyse des coûts."],
+  ["Comptabilité et fiscalité", "Comptabilité générale et immobilière, normes comptables (IFRS/OHADA), consolidation des comptes, audit financier, fiscalité."],
+  ["Outils et logiciels", "Excel avancé (tableaux croisés dynamiques, VBA, modèles financiers), Tableau Desktop, suite Microsoft Office, Power BI (bases)."],
+  ["Langues", "Français (natif), anglais."]
+];
+
+const PROFILE = "Diplômé d’un MBA Finance de l’ESLSCA Business School, je combine de solides compétences en analyse financière, contrôle de gestion et audit avec une approche orientée performance et résultats. Mes expériences m’ont permis de participer à l’élaboration et au suivi budgétaire, à l’analyse de la rentabilité des activités, à la production de reportings financiers et à l’évaluation des risques. Reconnu pour ma rigueur, mon sens de l’analyse et mon autonomie, je souhaite rejoindre une entreprise dynamique afin d’accompagner ses décisions stratégiques et contribuer durablement à sa performance financière.";
+
+/* Certifications : fichiers docs/<slug>.pdf (document) et docs/<slug>.jpg (aperçu). Ordre = ordre d’affichage. */
+const CV = "https://coursera.org/verify/";
+const CERTS = [
+  { g: "Outils et programmation", slug: "everyday-excel-1", title: "Everyday Excel, Part 1", issuer: "University of Colorado Boulder", date: "6 oct. 2021", verify: CV + "SDXVHNQ4W2XX" },
+  { g: "Outils et programmation", slug: "everyday-excel-2", title: "Everyday Excel, Part 2", issuer: "University of Colorado Boulder", date: "6 oct. 2021", verify: CV + "TQFMSKX4FEHK" },
+  { g: "Outils et programmation", slug: "python-for-everybody", title: "Programming for Everybody (Getting Started with Python)", issuer: "University of Michigan", date: "13 oct. 2021", verify: CV + "NGGSTVFRU7EN" },
+  { g: "Outils et programmation", slug: "intro-computers-office", title: "Introduction to Computers and Office Productivity Software", issuer: "Hong Kong University of Science and Technology", date: "29 sept. 2021", verify: CV + "J69RYGBAZXQQ" },
+  { g: "Anglais", slug: "learn-english-beginning-grammar", title: "Learn English: Beginning Grammar (spécialisation)", issuer: "University of California, Irvine", date: "27 sept. 2021", verify: CV + "specialization/M4VGV5AZRT5C" },
+  { g: "Anglais", slug: "questions-present-progressive-future", title: "Questions, Present Progressive and Future Tenses", issuer: "University of California, Irvine", date: "27 sept. 2021", verify: CV + "UJRCHJ28RCP8" },
+  { g: "Anglais", slug: "simple-past-tense", title: "Simple Past Tense", issuer: "University of California, Irvine", date: "27 sept. 2021", verify: CV + "P47KAN9HN7SG" },
+  { g: "Anglais", slug: "perfect-tenses-modals", title: "Perfect Tenses and Modals", issuer: "University of California, Irvine", date: "3 oct. 2021", verify: CV + "WS4EBBXS5GKJ" },
+  { g: "Méthode de travail et équipe", slug: "teamwork-skills", title: "Teamwork Skills: Communicating Effectively in Groups", issuer: "University of Colorado Boulder", date: "3 oct. 2021", verify: CV + "5SE3BZLUL5FB" },
+  { g: "Méthode de travail et équipe", slug: "learning-how-to-learn-youth", title: "Learning How To Learn for Youth", issuer: "Arizona State University", date: "1 oct. 2021", verify: CV + "HKY422DR635Z" },
+  { g: "Méthode de travail et équipe", slug: "mindshift", title: "Mindshift: Break Through Obstacles to Learning and Discover Your Hidden Potential", issuer: "McMaster University", date: "1 oct. 2021", verify: CV + "RMVDGBY64UCE" }
+];
+
+const OTHER = [
+  "Tableau croisé dynamique (TCD), Tableau Desktop, Visual Basic for Applications (VBA).",
+  "Finance d’entreprise, flux de trésorerie, fondamentaux de la finance, Value Investing (Udemy, Cursa)."
+];
+
+/* ===================== AFFICHAGE ===================== */
+const $ = s => document.querySelector(s);
+const dlg = $("#bubble");
+const ic = `<svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3.5A1.5 1.5 0 0 1 3.5 2h9A1.5 1.5 0 0 1 14 3.5v6a1.5 1.5 0 0 1-1.5 1.5H7l-3 3v-3h-.5A1.5 1.5 0 0 1 2 9.5z" fill="currentColor"/></svg>`;
+const org = id => `<button class="org" data-open="org:${id}">${ORGS[id].name}${ic}</button>`;
+const section = (id, title, inner) => `<section class="sec" id="${id}"><div class="wrap sec-in"><h2>${title}</h2><div class="sec-body">${inner}</div></div></section>`;
+
+function renderPage() {
+  const profil = `<p class="prose">${PROFILE}</p><button class="btn" data-open="parcours">Voir tout mon parcours</button>`;
+  const comp = `<dl class="skills">${SKILLS.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>`;
+  const exp = EXP.map(e => `<article class="row"><div><h3>${e.role}</h3><p class="where">${org(e.org)}, ${e.place}</p><ul>${e.bullets.map(b => `<li>${b}</li>`).join("")}</ul></div><p class="when">${e.dates}</p></article>`).join("");
+  const edu = EDU.map(e => `<article class="row"><div><h3>${e.degree}</h3><p class="where">${org(e.org)}, ${e.place}</p><p class="subj"><span class="muted">Matières :</span> ${e.subjects}</p></div><p class="when">${e.dates}</p></article>`).join("");
+  let certs = "", last = "";
+  CERTS.forEach((c, i) => {
+    if (c.g !== last) { certs += `<h3 class="grp">${c.g}</h3>`; last = c.g; }
+    certs += `<button class="cert" data-open="cert:${i}"><span class="t">${c.title}</span><span class="i">${c.issuer}</span><span class="d">${c.date}</span></button>`;
+  });
+  certs += `<div class="more"><h3>Autres formations suivies</h3>${OTHER.map(o => `<p>${o}</p>`).join("")}<p class="muted">Plateformes : Coursera, Udemy, Cursa, HP Life.</p></div>`;
+  $("#sections").innerHTML =
+    section("profil", "Profil", profil) + section("competences", "Compétences clés", comp) +
+    section("experiences", "Expériences professionnelles", exp) + section("formation", "Formation", edu) +
+    section("certifications", "Certifications", certs);
+}
+
+/* --- contenus des bulles --- */
+const photoBubble = () => `<div class="portrait"><img src="img/photo.jpg" alt="Portrait de Hans-Kilian Coffi en costume bleu"></div>
+  <h2 id="bt" class="center" style="padding:0">Hans-Kilian COFFI</h2>
+  <p class="center muted">Diplômé d’un MBA Finance, Paris</p>`;
+
+function parcours() {
+  const items = [
+    ...EXP.map(e => ({ cls: "exp", start: e.start, title: e.role, org: e.org, place: e.place, dates: e.dates })),
+    ...EDU.map(e => ({ cls: "edu", start: e.start, title: e.degree, org: e.org, place: e.place, dates: e.dates }))
+  ].sort((a, b) => b.start.localeCompare(a.start));
+  return `<h2 id="bt">Mon parcours</h2>
+    <div class="legend"><span><i class="dot"></i>Expérience</span><span><i class="dot ring"></i>Formation</span></div>
+    <ol class="tl">${items.map(i => `<li class="${i.cls}"><div class="dt">${i.dates}</div><p class="tt">${i.title}</p><p class="pl">${org(i.org)}, ${i.place}</p></li>`).join("")}</ol>`;
+}
+
+/* Cherche img/<id>.jpg, puis .png, .webp, .jpeg ; sinon retire l’image (les initiales restent). */
+const EXTS = ["jpg", "png", "webp", "jpeg"];
+function imgFallback(el, id) {
+  const n = +(el.dataset.n || 0) + 1;
+  if (n >= EXTS.length) { el.remove(); return; }
+  el.dataset.n = n; el.src = `img/${id}.${EXTS[n]}`;
+}
+
+function orgBubble(id) {
+  const o = ORGS[id];
+  const stints = [
+    ...EXP.filter(e => e.org === id).map(e => `<div class="stint"><b>${e.role}</b><small>${e.place}, ${e.dates}</small><ul>${e.bullets.map(b => `<li>${b}</li>`).join("")}</ul></div>`),
+    ...EDU.filter(e => e.org === id).map(e => `<div class="stint"><b>${e.degree}</b><small>${e.place}, ${e.dates}</small><p><span class="muted">Matières :</span> ${e.subjects}</p></div>`)
+  ].join("");
+  return `<div class="pic"><span class="mono">${o.initials}</span><img src="img/${id}.jpg" data-n="0" alt="" onerror="imgFallback(this,'${id}')"></div>
+    <h2 id="bt">${o.name}</h2>
+    ${o.about ? `<p>${o.about}</p>` : ""}
+    <h3>Mon passage</h3>${stints}`;
+}
+
+function certBubble(i) {
+  const c = CERTS[i];
+  return `<img class="cimg" src="docs/${c.slug}.jpg" alt="Certificat : ${c.title}">
+    <h2 id="bt">${c.title}</h2>
+    <p class="muted">${c.issuer}, ${c.date}</p>
+    <div class="cta"><a class="btn" href="docs/${c.slug}.pdf" target="_blank" rel="noopener">Ouvrir le PDF</a>
+    <a class="btn ghost" href="${c.verify}" target="_blank" rel="noopener">Vérifier sur Coursera</a></div>
+    <div class="pn"><button class="btn ghost" data-open="cert:${i - 1}" ${i === 0 ? "disabled" : ""}>Précédent</button>
+    <button class="btn ghost" data-open="cert:${i + 1}" ${i === CERTS.length - 1 ? "disabled" : ""}>Suivant</button></div>`;
+}
+
+function openBubble(key) {
+  const [k, v] = key.split(":");
+  const html = k === "photo" ? photoBubble() : k === "parcours" ? parcours() : k === "org" ? orgBubble(v) : certBubble(+v);
+  $("#bc").innerHTML = html;
+  if (!dlg.open) dlg.showModal();
+  dlg.querySelector(".bub").scrollTop = 0;
+}
+
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-open]");
+  if (b) { if (!b.disabled) openBubble(b.dataset.open); return; }
+  if (e.target.closest("[data-close]") || e.target === dlg) dlg.close();
+});
+
+renderPage();
+</script>
+</body>
+</html>
